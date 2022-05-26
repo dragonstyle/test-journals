@@ -168,7 +168,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     console.log(response);
     
     if (response.status == 200) {
+      
       return response.json().then(function (listingPaths) {
+        console.log(listingPaths);
         const listingHrefs = [];
         for (const listingPath of listingPaths) {
           const pathWithoutLeadingSlash = listingPath.listing.substring(1);
