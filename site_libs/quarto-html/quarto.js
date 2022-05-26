@@ -164,6 +164,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   async function findAndActivateCategories() {
     const thisPath = window.location.pathname;
     const response = await fetch(offsetRelativeUrl("listings.json"));
+    
+    console.log(response);
+    
     if (response.status == 200) {
       return response.json().then(function (listingPaths) {
         const listingHrefs = [];
