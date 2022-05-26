@@ -169,7 +169,8 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     
     if (response.status == 200) {
       
-      return response.json().then(function (listingPaths) {
+      const listingPaths = await response.json();
+
         console.log(listingPaths);
         const listingHrefs = [];
         for (const listingPath of listingPaths) {
@@ -224,7 +225,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
             activateCategories(listingHrefs[0]);
           }
         }
-      });
+
     }
   }
   if (hasTitleCategories()) {
