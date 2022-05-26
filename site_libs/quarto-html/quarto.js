@@ -181,13 +181,14 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
               const relative = offsetRelativeUrl(pathWithoutLeadingSlash);
               const baseUrl = window.location;
               const resolvedPath = new URL(relative, baseUrl);
+              console.log(resolvedPath.pathname);
               listingHrefs.push(resolvedPath.pathname);
               break;
             }
           }
         }
         
-        console.log(listingHrefs);
+
 
         // Look up the tree for a nearby linting and use that if we find one
         const nearestListing = findNearestParentListing(
