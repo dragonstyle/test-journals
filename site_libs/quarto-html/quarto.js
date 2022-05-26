@@ -183,6 +183,8 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
             }
           }
         }
+        
+        console.log(listingHrefs);
 
         // Look up the tree for a nearby linting and use that if we find one
         const nearestListing = findNearestParentListing(
