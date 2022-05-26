@@ -178,10 +178,14 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
               // we already are using the correct path to the listing
               // (this adjusts the listing urls to be rooted against
               // whatever root the page is actually running against)
+              console.log(pathWithoutLeadingSlash);
               const relative = offsetRelativeUrl(pathWithoutLeadingSlash);
+              console.log(relative);
               const baseUrl = window.location;
+              console.log(baseUrl);
               const resolvedPath = new URL(relative, baseUrl);
-              console.log(resolvedPath.pathname);
+              console.log(resolvedPath);
+
               listingHrefs.push(resolvedPath.pathname);
               break;
             }
