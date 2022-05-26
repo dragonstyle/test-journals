@@ -173,14 +173,17 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
         console.log(listingPaths);
         const listingHrefs = [];
         for (const listingPath of listingPaths) {
+          console.log(listingPath);
           const pathWithoutLeadingSlash = listingPath.listing.substring(1);
+          console.log(pathWithoutLeadingSlash);
           for (const item of listingPath.items) {
+            console.log(item);
             if (item === thisPath || item === thisPath + "index.html") {
               // Resolve this path against the offset to be sure
               // we already are using the correct path to the listing
               // (this adjusts the listing urls to be rooted against
               // whatever root the page is actually running against)
-              console.log(pathWithoutLeadingSlash);
+
               const relative = offsetRelativeUrl(pathWithoutLeadingSlash);
               console.log(relative);
               const baseUrl = window.location;
