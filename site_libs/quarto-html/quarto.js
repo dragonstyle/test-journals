@@ -177,7 +177,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
           console.log(listingPath);
           const pathWithoutLeadingSlash = listingPath.listing.substring(1);
           console.log(pathWithoutLeadingSlash);
-          console.log(thisPath);
+          console.log(">" + thisPath);
           for (const item of listingPath.items) {
             console.log(item);
             if (item === thisPath || item === thisPath + "index.html") {
