@@ -186,7 +186,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
           for (const item of listingPath.items) {
             console.log(item);
             
-            const itemPath = offsetAbsoluteUrl(item);
+            const itemPath = item;
             console.log(itemPath);
             
             if (itemPath === thisPath || itemPath === thisPath + "index.html") {
