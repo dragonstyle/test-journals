@@ -166,7 +166,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   }
 
   async function findAndActivateCategories() {
-    const thisPath = window.location.pathname;
+    const thisPath = offsetAbsoluteUrl(window.location.pathname);
     const response = await fetch(offsetRelativeUrl("listings.json"));
     
     console.log(response);
