@@ -174,14 +174,12 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     if (response.status == 200) {
       
       const listingPaths = await response.json();
-
-        console.log(listingPaths);
         const listingHrefs = [];
         for (const listingPath of listingPaths) {
           console.log(listingPath);
-          const pathWithoutLeadingSlash = listingPath.listing.substring(1);
-          console.log(pathWithoutLeadingSlash);
           console.log(">" + thisPath);
+          const pathWithoutLeadingSlash = listingPath.listing.substring(1);
+
           for (const item of listingPath.items) {
             console.log(item);
             
