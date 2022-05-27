@@ -180,7 +180,11 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
           console.log(">" + thisPath);
           for (const item of listingPath.items) {
             console.log(item);
-            if (item === thisPath || item === thisPath + "index.html") {
+            
+            const itemPath = offsetAbsoluteUrl(item);
+            console.log(itemPath);
+            
+            if (itemPath === thisPath || itemPath === thisPath + "index.html") {
               // Resolve this path against the offset to be sure
               // we already are using the correct path to the listing
               // (this adjusts the listing urls to be rooted against
