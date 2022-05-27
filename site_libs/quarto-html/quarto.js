@@ -171,6 +171,8 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     const currentPath = offsetAbsoluteUrl(window.location);
     console.log("==" + currentPath);
     
+    const thisPath = window.location.path;
+    
     const response = await fetch(offsetRelativeUrl("listings.json"));
     if (response.status == 200) {
       
