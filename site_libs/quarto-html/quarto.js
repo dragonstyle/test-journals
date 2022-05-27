@@ -168,7 +168,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   async function findAndActivateCategories() {
     
     console.log("-" + window.location);
-    const currentPath = offsetAbsoluteUrl(window.location);
+    const currentPath = offsetAbsoluteUrl(window.location.path);
     console.log("==" + currentPath);
     
     const thisPath = window.location.path;
