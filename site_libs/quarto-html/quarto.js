@@ -148,7 +148,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     const offset = getMeta("quarto:offset");
     const baseUrl = new URL(offset, window.location);
     console.log(`BU: ${baseUrl}`);
-    const projRelativeUrl = url.href.replace(baseUrl, "");
+    const projRelativeUrl = url.replace(baseUrl, "");
     console.log(`PR: ${projRelativeUrl}`);
     if (projRelativeUrl.startsWith("/")) {
       return projRelativeUrl;
@@ -171,10 +171,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   async function findAndActivateCategories() {
     
     console.log("-" + window.location);
-    const currentPath = offsetAbsoluteUrl(window.location);
+    const thisPath = offsetAbsoluteUrl(window.location.href);
     console.log("==" + currentPath);
     
-    const thisPath = window.location.pathname;
     
     const response = await fetch(offsetRelativeUrl("listings.json"));
     if (response.status == 200) {
