@@ -147,7 +147,11 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     const offset = getMeta("quarto:offset");
     const baseUrl = new URL(offset, window.location);
     const projRelativeUrl = url.replace(baseUrl, "");
-    return "/" + projRelativeUrl;
+    if (projRelativeUrl.startsWith("/")) {
+      return projRelativeUrl;
+    } else {
+      return "/" + projRelativeUrl;
+    }
   }
 
   // read a meta tag value
