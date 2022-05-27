@@ -148,7 +148,7 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
     const offset = getMeta("quarto:offset");
     const baseUrl = new URL(offset, window.location);
     console.log(`BU: ${baseUrl}`);
-    const projRelativeUrl = url.replace(baseUrl, "");
+    const projRelativeUrl = url.href.replace(baseUrl, "");
     console.log(`PR: ${projRelativeUrl}`);
     if (projRelativeUrl.startsWith("/")) {
       return projRelativeUrl;
