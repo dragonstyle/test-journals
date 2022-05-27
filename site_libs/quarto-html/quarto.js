@@ -144,9 +144,12 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   }
 
   function offsetAbsoluteUrl(url) {
+    console.log(`UR: ${url}`);
     const offset = getMeta("quarto:offset");
     const baseUrl = new URL(offset, window.location);
+    console.log(`BU: ${baseUrl}`);
     const projRelativeUrl = url.replace(baseUrl, "");
+    console.log(`PR: ${projRelativeUrl}`);
     if (projRelativeUrl.startsWith("/")) {
       return projRelativeUrl;
     } else {
